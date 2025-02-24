@@ -8,6 +8,19 @@ using UnityEngine.SceneManagement;
  */
 public class GameManager : MonoBehaviour
 {
+    #region 单例模式
+    // 创建单例 - Unity写法的单例模式
+    public static GameManager Instance;
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,19 +51,19 @@ public class GameManager : MonoBehaviour
     }
 
     #region 场景加载
-    public static void LoadScene_01()
+    public void LoadScene_01()
     {
         SceneManager.LoadScene("_01_InitialMenu");
 
     }
 
-    public static void LoadScene_02()
+    public void LoadScene_02()
     {
         SceneManager.LoadScene("_02_ModelSelect");
 
     }
 
-    public static void LoadScene_03()
+    public void LoadScene_03()
     {
         SceneManager.LoadScene("_03_Battle_01");
 

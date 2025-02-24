@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/**
- * @管理开始界面所有的UI
- */
 public class StartGamePanel : MonoBehaviour
 {
     public Button StartGameBtn;
@@ -13,7 +10,7 @@ public class StartGamePanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartGameBtn.onClick.AddListener(StiartGameBtnClick);
+        StartGameBtn.onClick.AddListener(handleStartGameBtnClick);
     }
 
     // Update is called once per frame
@@ -22,9 +19,8 @@ public class StartGamePanel : MonoBehaviour
         
     }
 
-    public void StiartGameBtnClick()
+    public void handleStartGameBtnClick()
     {
-        Debug.Log("StiartGameBtnClick");
-        GameManager.LoadScene_02();
+        GameManager.Instance.LoadScene_02();
     }
 }
